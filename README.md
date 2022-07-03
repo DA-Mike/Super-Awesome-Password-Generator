@@ -12,7 +12,7 @@ This was a great learning experience, I learned a lot about functional coding an
 
 ## Live Site
 
-placeholder
+https://da-mike.github.io/Super-Awesome-Password-Generator/
 
 ## Mock-Up
 
