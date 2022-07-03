@@ -54,6 +54,8 @@ function selectParams() {
 
 selectParams();
 
+var charArr = [];
+
 //Generates password
 function generatePassword() {
   var pwArr = [];
@@ -63,6 +65,7 @@ function generatePassword() {
   charChoiceLower = charChoiceLower.toUpperCase();
   if (charChoiceLower == "Y"){
     pwArr = pwArr.concat(alphaArr);
+    charArr.push(alphaArr);
   } 
   //Uppercase parameter
   charChoiceUpper = charChoiceUpper.toUpperCase();
@@ -71,16 +74,19 @@ function generatePassword() {
       return element.toUpperCase();
     });
     pwArr = pwArr.concat(upperArr);
+    charArr.push(upperArr);
   }
   //Number parameter 
   charChoiceNum = charChoiceNum.toUpperCase();
   if (charChoiceNum == "Y") {
     pwArr = pwArr.concat(intArr);
+    charArr.push(intArr);
   }
   //Special character parameter
   charChoiceSpec = charChoiceSpec.toUpperCase();
   if (charChoiceSpec == "Y") {
     pwArr = pwArr.concat(spArr);
+    charArr.push(spArr);
   }
   //After the parameter array is created, we generate the password
   for (i = 0; i < lengthChoice; i++) {
@@ -104,7 +110,6 @@ function generatePassword() {
     return pwString;
   }
   //Calls password validation function
-  var charArr = [alphaArr, upperArr, intArr, spArr];
   for (i = 0; i < charArr.length; i++){
     validatePW(charArr[i], pwString);
   }
